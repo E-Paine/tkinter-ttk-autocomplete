@@ -31,7 +31,6 @@ jobs:
           else
             sudo apt-get update
             sudo apt-get install python3-tk
-            python3 -m pip install -U pip
             mkdir -p ~/.cache/apt-pkg-cache
             for dep in blt python3-tk tk8.6-blt2.5; do
               dpkg -L $dep | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/.cache/apt-pkg-cache
